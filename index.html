@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script>
+        SystemJS.config({
+          packages: {
+            "node_modules": {
+                defaultExtension: "js"
+            }
+          },
+          map: {
+            jquery: "node_modules/jquery/dist/jquery",
+            lodash: "node_modules/lodash"
+          }
+        });
+    </script>
+    <script>
+        SystemJS.import('bundle.js')
+            .then(() => SystemJS.import('index'))
+            .catch(console.error);
+    </script>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>
